@@ -1,0 +1,126 @@
+
+/* custom CSS 蓝色258797 红色EA8261 紫色B3756B 绿色36C289  */
+body 
+  background: #000000 url(http://cityfall.b0.upaiyun.com/cover/bg.jpg) repeat fixed
+  background-size: cover
+  color: #ffffff
+  font-size: 14px
+  font-family: "Helvetica Neue", Helvetica, "Hiragino Sans GB", STHeiti, "WenQuanYi Micro Hei", \5FAE\8F6F\96C5\9ED1, arial, sans-serif
+  line-height: 1.692307em
+  margin-bottom: 1.692307em
+  -webkit-animation: myfirst 30s linear infinite
+  -o-animation: myfirst 30s linear infinite
+
+a 
+  text-decoration: none
+  color: #e5e5e5
+
+#site_player 
+   margin: 70px auto
+
+#site_bulletion 
+  text-align: center
+  color: #ffffff
+
+#socialshare 
+  margin: 0 auto
+  padding-top: 35px
+  display: table
+
+#footer 
+  margin: 0 auto
+  padding-top: 40px
+  display: table
+  color: #e5e5e5
+
+#footer ul 
+  padding-left: 0
+
+#footer ul li 
+  display: inline
+  font-size: 15px
+
+#comment 
+  margin: 70px auto
+  display: table
+  width: 650px
+
+#comment-display 
+  display: none
+
+#about 
+  width: 650px
+  font-size: 15px
+  margin: 70px auto
+  text-align: center
+  color: #EAEAEA
+
+  .author
+    margin-bottom: 50px
+
+    // .author-name
+    //   margin-top: 20px
+    //   margin-bottom: 10px
+
+    .author-contacts
+      margin-top: 20px
+  
+  .change-log
+    margin-bottom: 30px
+
+// Mobile (portrait) 
+@media only screen and (max-width: 767px) 
+  #site_player 
+    margin: 20px auto
+    
+  #footer 
+    margin: 0 auto
+    padding-top: 10px
+    display: table
+
+  #comment 
+    margin: 20px auto
+    display: table
+    width: 300px
+
+  #about 
+    width: 300px
+    font-size: 15px
+    margin: 70px auto
+    text-align: center
+    color: #EAEAEA
+
+  // /* 滚动条 */
+  ::-webkit-scrollbar 
+    width:10px
+    margin-right:2px
+
+  ::-webkit-scrollbar-track-piece 
+    background-color:#F5F5F5
+    border-left:1px solid #D2D2D2
+
+  ::-webkit-scrollbar-thumb 
+    background:#CBCBCB
+    width:10px
+
+  ::-webkit-scrollbar-thumb:hover 
+    background:#808080
+
+
+.link-group
+  a
+    &::before,::after
+      content: '|'
+      margin-left: 10px
+      margin-right: 10px
+      padding: 0
+
+    &:first-of-type::before
+      content: ''
+      margin-left: 0px
+      margin-right: 0px
+
+    &:last-of-type::after
+      content: ''
+      margin-right: 0px
+      margin-left: 0px

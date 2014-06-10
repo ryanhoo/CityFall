@@ -3,28 +3,15 @@ doctype html
 html
   head
     include _head
-
     title= about.yaml
-    
-    link(rel="stylesheet", type="text/css", href="js/initaudioplayer-1.css")
-
-    script(type="text/javascript").
-      var _gaq = _gaq || [];
-      _gaq.push(['_setAccount', 'UA-22869884-1']);
-      _gaq.push(['_trackPageview']);
-
-      (function() {
-        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-        ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
-        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-      })();
 
   body
     div#about
       each author in about.authors
-        p= author.name
-        p.link-group
-          each contact in author.contacts
-            a(href="#{contact.link}", target="#{contact.target}")= contact.name
+        .author
+          p.author-name= author.name
+          p.author-contacts.link-group
+            each contact in author.contacts
+              a(href="#{contact.link}", target="#{contact.target}")= contact.name
       each change in about.changes
-        p= change.desc
+        p.change-log= change.desc

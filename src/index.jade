@@ -6,25 +6,14 @@ html
 
     title= index.title
 
-    link(rel="stylesheet", type="text/css", href="js/initaudioplayer-1.css")
+    link(rel="stylesheet", type="text/css", href="styles/audio-player.css", media="all")
     script(src="js/jquery.js")
-    script(src="js/amazingaudioplayer.js")
-    script(src="js/initaudioplayer-1.js")
+    script(src="js/amazing-audio-player.js")
+    script(src="js/init-audio-player.js")
     link(rel="apple-touch-icon", href="touch-icon-iphone.png")
     link(rel="apple-touch-icon", sizes="72x72", href="touch-icon-ipad.png")
     link(rel="apple-touch-icon", sizes="114x114", href="touch-icon-iphone-retina.png")
     link(rel="apple-touch-icon", sizes="144x144", href="touch-icon-ipad-retina.png")
-
-    script(type="text/javascript").
-      var _gaq = _gaq || [];
-      _gaq.push(['_setAccount', 'UA-22869884-1']);
-      _gaq.push(['_trackPageview']);
-
-      (function() {
-        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-        ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
-        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-      })();
 
   body
     div#site_player
@@ -59,21 +48,8 @@ html
 
     footer#footer
       ul
-        each tab in index.tabs
-          li
+        li.link-group
+          each tab in index.tabs
             a(href="#{tab.link}", target="#{tab.target}")= tab.name
         li
           span(style="margin-left: 30px;")= site_info.mark 
-
-    div#comment-display
-      div.ds-thread
-      script(type="text/javascript").
-        var duoshuoQuery = {short_name:"newcityfall"};
-        (function() {
-        var ds = document.createElement('script');
-        ds.type = 'text/javascript';ds.async = true;
-        ds.src = 'http://static.duoshuo.com/embed.js';
-        ds.charset = 'UTF-8';
-        (document.getElementsByTagName('head')[0] 
-        || document.getElementsByTagName('body')[0]).appendChild(ds);
-         })();
