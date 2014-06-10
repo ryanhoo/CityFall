@@ -1,0 +1,16 @@
+node_modules
+bower_components
+www
+
+merges
+
+*.sw[a-z]
+.DS_Store
+
+Makefile.local
+Makefile
+Gulpfile.coffee
+
+scripts/
+src/datas
+
