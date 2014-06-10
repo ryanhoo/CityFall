@@ -2,10 +2,9 @@ doctype html
 
 html
   head
-    meta(http-equiv="content-type" content="text/html;charset=utf-8")
-    meta(meta name="viewport" content="width=device-width")
+    include _head
 
-    title 关于
+    title= about.yaml
     
     link(rel="stylesheet", type="text/css", href="js/initaudioplayer-1.css")
 
@@ -22,23 +21,10 @@ html
 
   body
     div#about
-      span
-        p Less is more.
-        br
-        br
-        p 越小墨
-        a(href="http://noeer.com", target="_blank") 博客
-        | &nbsp;&nbsp;|&nbsp;&nbsp;
-        a(href="http://www.douban.com/people/cafe1618/" target="_blank") 豆瓣
-        | &nbsp;&nbsp;|&nbsp;&nbsp;
-        a(href="http://www.zhihu.com/people/yousurm" target="_blank") 知乎
-        br
-        br
-        br
-        | 2010.4.27 上线。"聋子音乐电台"
-        br 
-        br 
-        | 2011.3.14 "城落""
-        br 
-        br 
-        | 2014.2.17 更改单曲、期刊的推荐形式
+      each author in about.authors
+        p= author.name
+        p.link-group
+          each contact in author.contacts
+            a(href="#{contact.link}", target="#{contact.target}")= contact.name
+      each change in about.changes
+        p= change.desc
