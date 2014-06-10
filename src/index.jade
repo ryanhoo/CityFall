@@ -1,0 +1,85 @@
+doctype html
+
+html
+  head
+    meta(http-equiv="content-type" content="text/html;charset=utf-8")
+    meta(meta name="viewport" content="width=device-width")
+
+    title 城落 - 偶遇。一首歌
+
+    link(rel="stylesheet", type="text/css", href="js/initaudioplayer-1.css")
+    script(src="js/jquery.js")
+    script(src="js/amazingaudioplayer.js")
+    script(src="js/initaudioplayer-1.js")
+    link(rel="apple-touch-icon", href="touch-icon-iphone.png")
+    link(rel="apple-touch-icon", sizes="72x72", href="touch-icon-ipad.png")
+    link(rel="apple-touch-icon", sizes="114x114", href="touch-icon-iphone-retina.png")
+    link(rel="apple-touch-icon", sizes="144x144", href="touch-icon-ipad-retina.png")
+
+    script(type="text/javascript").
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-22869884-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+  body
+    div#site_player
+      div#amazingaudioplayer-1(style="display:block;position:relative;width:300px;height:300px;margin:0px auto 0px;")
+        ul.amazingaudioplayer-audios(style="display:none;")
+          each music in playlist
+            li(
+              data-artist="#{music.artist}"
+              data-title="#{music.title}"
+              data-album="#{music.album}"
+              data-info="#{music.info}"
+              data-image="#{music.image}"
+              data-duration="#{music.duration}"
+            )
+              div.amazingaudioplayer-source(
+                data-src="#{music.mp3}"
+                data-type="audio/mpeg"
+              )
+              div.amazingaudioplayer-source(
+                data-src="#{music.ogg}"
+                data-type="audio/ogg"
+              )
+
+        div.amazingaudioplayer-engine(style="display:none;")
+          a(href="http://amazingaudioplayer.com", title="mp3 player for website") audio player for website
+
+    div#site_bulletion
+      span(style="color: #ffffff; font-size: 16px;")= site_info.motto 
+      br
+      br
+      span(style="color: #999999; font-size: 12px;")= site_info.desc 
+
+    footer#footer
+      ul
+        li
+          a(href="http://once.cityfall.com/" target="_blank") 旧版 |
+        li
+          a(href="comment.html" target="_blank") 留言 |
+        li
+          a(href="about.html" target="_blank") 关于 |
+        li
+          a(href="https://db.tt/6ZdV8r4c" target="_blank") Dropbox
+        li
+          span(style="margin-left: 30px;") 城落™
+
+    div#comment-display
+      div.ds-thread
+      script(type="text/javascript").
+        var duoshuoQuery = {short_name:"newcityfall"};
+        (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = 'http://static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0] 
+        || document.getElementsByTagName('body')[0]).appendChild(ds);
+         })();
