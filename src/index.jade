@@ -43,7 +43,8 @@ html
           a(href="http://amazingaudioplayer.com", title="mp3 player for website") audio player for website
 
     div#site_bulletion
-      p.site-motto= site_info.motto 
+      each motto in site_info.mottos
+        p.site-motto= motto 
       p.site-desc= site_info.desc 
 
     footer#footer
