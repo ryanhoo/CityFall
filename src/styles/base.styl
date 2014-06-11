@@ -1,7 +1,7 @@
 
 /* custom CSS 蓝色258797 红色EA8261 紫色B3756B 绿色36C289  */
 body 
-  background: #000000 url(http://cityfall.b0.upaiyun.com/cover/bg.jpg) repeat fixed
+  // background: #000000 url(http://cityfall.b0.upaiyun.com/cover/bg.jpg) repeat fixed
   background-size: cover
   color: #ffffff
   font-size: 14px
@@ -10,6 +10,7 @@ body
   margin-bottom: 1.692307em
   -webkit-animation: myfirst 30s linear infinite
   -o-animation: myfirst 30s linear infinite
+  text-align: center
 
 a 
   text-decoration: none
@@ -19,8 +20,16 @@ a
    margin: 70px auto
 
 #site_bulletion 
-  text-align: center
   color: #ffffff
+
+  .site-motto
+    color: #ffffff
+    font-size: 16px
+
+  .site-desc
+    margin-top: 30px
+    color: #999999
+    font-size: 12px
 
 #socialshare 
   margin: 0 auto
@@ -52,7 +61,6 @@ a
   width: 650px
   font-size: 15px
   margin: 70px auto
-  text-align: center
   color: #EAEAEA
 
   .author
@@ -67,6 +75,35 @@ a
   
   .change-log
     margin-bottom: 30px
+
+.amazingaudioplayer-engine, .amazingaudioplayer-audios
+  display: none
+
+#site_player
+  #amazingaudioplayer-1
+    display:block
+    position:relative
+    width:300px
+    height:300px
+    margin:0px auto 0px
+
+.link-group
+  a
+    &::before,::after
+      content: '|'
+      margin-left: 10px
+      margin-right: 10px
+      padding: 0
+
+    &:first-of-type::before
+      content: ''
+      margin-left: 0px
+      margin-right: 0px
+
+    &:last-of-type::after
+      content: ''
+      margin-right: 0px
+      margin-left: 0px
 
 // Mobile (portrait) 
 @media only screen and (max-width: 767px) 
@@ -87,7 +124,6 @@ a
     width: 300px
     font-size: 15px
     margin: 70px auto
-    text-align: center
     color: #EAEAEA
 
   // /* 滚动条 */
@@ -105,22 +141,3 @@ a
 
   ::-webkit-scrollbar-thumb:hover 
     background:#808080
-
-
-.link-group
-  a
-    &::before,::after
-      content: '|'
-      margin-left: 10px
-      margin-right: 10px
-      padding: 0
-
-    &:first-of-type::before
-      content: ''
-      margin-left: 0px
-      margin-right: 0px
-
-    &:last-of-type::after
-      content: ''
-      margin-right: 0px
-      margin-left: 0px

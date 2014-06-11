@@ -15,36 +15,36 @@ html
     link(rel="apple-touch-icon", sizes="114x114", href="touch-icon-iphone-retina.png")
     link(rel="apple-touch-icon", sizes="144x144", href="touch-icon-ipad-retina.png")
 
-  body
+  include _body
     div#site_player
-      div#amazingaudioplayer-1(style="display:block;position:relative;width:300px;height:300px;margin:0px auto 0px;")
-        ul.amazingaudioplayer-audios(style="display:none;")
+      div#amazingaudioplayer-1
+        ul.amazingaudioplayer-audios
           each music in playlist
-            li(
-              data-artist="#{music.artist}"
-              data-title="#{music.title}"
-              data-album="#{music.album}"
-              data-info="#{music.info}"
-              data-image="#{music.image}"
-              data-duration="#{music.duration}"
-            )
-              div.amazingaudioplayer-source(
-                data-src="#{music.mp3}"
-                data-type="audio/mpeg"
+            - var default_cover = site_info.default_cover
+            - music.image = music.image || default_cover
+              li(
+                data-artist="#{music.artist}"
+                data-title="#{music.title}"
+                data-album="#{music.album}"
+                data-info="#{music.info}"
+                data-image="#{music.image}"
+                data-duration="#{music.duration}"
               )
-              div.amazingaudioplayer-source(
-                data-src="#{music.ogg}"
-                data-type="audio/ogg"
-              )
+                div.amazingaudioplayer-source(
+                  data-src="#{music.mp3}"
+                  data-type="audio/mpeg"
+                )
+                div.amazingaudioplayer-source(
+                  data-src="#{music.ogg}"
+                  data-type="audio/ogg"
+                )
 
-        div.amazingaudioplayer-engine(style="display:none;")
+        div.amazingaudioplayer-engine
           a(href="http://amazingaudioplayer.com", title="mp3 player for website") audio player for website
 
     div#site_bulletion
-      span(style="color: #ffffff; font-size: 16px;")= site_info.motto 
-      br
-      br
-      span(style="color: #999999; font-size: 12px;")= site_info.desc 
+      p.site-motto= site_info.motto 
+      p.site-desc= site_info.desc 
 
     footer#footer
       ul
